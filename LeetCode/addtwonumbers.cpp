@@ -67,27 +67,27 @@ public:
     }
 };
 
-int main() {
-    Solution s;
-    ListNode* l1 = new ListNode(9);
-    ListNode* ll = l1;
-    ll->next = new ListNode(9);
-    ll = ll->next;
-    ll->next = new ListNode(9); ll = ll->next;
-    ll->next = new ListNode(9); ll = ll->next;
-    ll->next = new ListNode(9); ll = ll->next;
-    ll->next = new ListNode(9); ll = ll->next;
-    ll->next = new ListNode(9);
-
-    ListNode* l2 = new ListNode(9);
-    ListNode* rr = l2;
-    rr->next = new ListNode(9); rr = rr->next;
-    rr->next = new ListNode(9); rr = rr->next;
-    rr->next = new ListNode(9); rr = rr->next;
-
-
-
-    s.addTwoNumbers(l1, l2);
-
-    return 0;
-}
+//int main() {
+//    Solution s;
+//    ListNode* l1 = new ListNode(9);
+//    ListNode* ll = l1;
+//    ll->next = new ListNode(9);
+//    ll = ll->next;
+//    ll->next = new ListNode(9); ll = ll->next;
+//    ll->next = new ListNode(9); ll = ll->next;
+//    ll->next = new ListNode(9); ll = ll->next;
+//    ll->next = new ListNode(9); ll = ll->next;
+//    ll->next = new ListNode(9);
+//
+//    ListNode* l2 = new ListNode(9);
+//    ListNode* rr = l2;
+//    rr->next = new ListNode(9); rr = rr->next;
+//    rr->next = new ListNode(9); rr = rr->next;
+//    rr->next = new ListNode(9); rr = rr->next;
+//
+//
+//
+//    s.addTwoNumbers(l1, l2);
+//
+//    return 0;
+//}

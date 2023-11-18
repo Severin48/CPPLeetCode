@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="medianoftwosortedarrays.cpp" />
     <ClCompile Include="twosum.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

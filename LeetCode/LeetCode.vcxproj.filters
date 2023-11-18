@@ -21,5 +21,8 @@
     <ClCompile Include="addtwonumbers.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="medianoftwosortedarrays.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
