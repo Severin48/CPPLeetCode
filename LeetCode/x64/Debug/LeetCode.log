@@ -1,5 +1,0 @@
-﻿  medianoftwosortedarrays.cpp
-D:\dev\LeetCode\LeetCode\medianoftwosortedarrays.cpp(10,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\dev\LeetCode\LeetCode\medianoftwosortedarrays.cpp(11,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\dev\LeetCode\LeetCode\medianoftwosortedarrays.cpp(35,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  LeetCode.vcxproj -> D:\dev\LeetCode\x64\Debug\LeetCode.exe
