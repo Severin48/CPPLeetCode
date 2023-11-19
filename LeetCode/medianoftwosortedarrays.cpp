@@ -2,9 +2,18 @@
 #include <vector>
 #include <iostream>
 #include <chrono>
+#include <random>
 
 using namespace std;
 using namespace chrono;
+
+template<typename T>
+void print_vec(vector<T>& vec, string sep) {
+    for (auto t : vec) {
+        cout << t << sep;
+    }
+    cout << endl;
+}
 
 class Solution {
 public:
@@ -38,14 +47,30 @@ public:
         }
     }
 
-    double getMedianFromPartialVector(vector<int>& vec, int l, int offset, int lof) {
+    double getMedianFromRightVector(vector<int>& vec, int l, int offset, int lof, int e) {
+        int m = (l / 2) - offset;
+        if (l % 2 != 0) {
+            return vec[m];
+        }
+        else {
+            if (m - 1 < e) {
+                return ((double)vec[m] + lof ) / 2.;
+            }
+            else {
+                return ((double)vec[m] + vec[m - 1]) / 2.;
+            }
+        }
+    }
+
+
+    double getMedianFromLeftVector(vector<int>& vec, int l, int offset, int lof) {
         int m = (l / 2) - offset;
         if (l % 2 != 0) {
             return vec[m];
         }
         else {
             if (m - 1 < 0) {
-                return ((double)vec[m] + lof ) / 2.;
+                return ((double)vec[m] + lof) / 2.;
             }
             else {
                 return ((double)vec[m] + vec[m - 1]) / 2.;
@@ -63,12 +88,12 @@ public:
 
         int ans = -1;
         int low = 0;
-        int high = vec.size();
+        int high = vec.size() - 1;
+        int mid;
 
-        while (low <= high) {
-            int mid = low + (high - low + 1) / 2;
+        while (low < high) {
+            mid = low + (high - low + 1) / 2;
             int midVal = vec[mid];
-            ans = mid;
 
             if (midVal < key) {
                 low = mid + 1;
@@ -80,6 +105,46 @@ public:
                 ans = mid;
                 high = mid - 1;
             }
+        }
+
+        if (ans == -1) {
+            ans = mid;
+        }
+
+        return ans;
+    }
+
+    int binarySearchLastOccurence(vector<int>& vec, int key) {
+        if (vec.back() == key) {
+            return vec.size() - 1;
+        }
+        if (vec[0] == key) {
+            return 0;
+        }
+
+        int ans = -1;
+        int low = 0;
+        int high = vec.size() - 1;
+        int mid = 0;
+
+        while (low < high) {
+            mid = low + (high - low + 1) / 2;
+            int midVal = vec[mid];
+
+            if (midVal < key) {
+                low = mid + 1;
+            }
+            else if (midVal > key) {
+                high = mid - 1;
+            }
+            else if (midVal == key) {
+                ans = mid;
+                low = mid + 1;
+            }
+        }
+
+        if (ans == -1) {
+            ans = mid;
         }
 
         return ans;
@@ -109,129 +174,319 @@ public:
             nums2.insert(nums2.end(), nums1.begin(), nums1.end());
             return getMedianFromVector(nums2);
         }
-
-        int valRange = max(nums1.back(), nums2.back()) - min(nums1.front(), nums2.front());
-        int r1, r2;
-        r1 = nums1.back() - nums1.front();
-        r2 = nums2.back() - nums2.front();
         
         // Start and end of overlapping value-span
         int s = max(nums1.front(), nums2.front());
         int e = min(nums1.back(), nums2.back());
 
-        int offset1 = binarySearchFirstOccurence(nums1, s);
-        int offset2 = binarySearchFirstOccurence(nums2, s);
-        int end1 = binarySearchFirstOccurence(nums1, e);
-        int end2 = binarySearchFirstOccurence(nums2, e);
+        int offset1_initial = binarySearchFirstOccurence(nums1, s);
+        int offset2_initial = binarySearchFirstOccurence(nums2, s);
+        int end1 = binarySearchLastOccurence(nums1, e);
+        int end2 = binarySearchLastOccurence(nums2, e);
 
-        if (end1 == 0 && end2 == 0) {
-            if (l1 == 1) {
-                return nums1[0];
+        int s1 = nums1[offset1_initial];
+        int s2 = nums2[offset2_initial];
+
+        int e1 = nums1[end1];
+        int e2 = nums2[end2];
+
+        int newM;
+
+        if (l2/2 > l1) {
+            newM = m + l1;
+            if (m < l2 && e1 < nums2[m]) {
+                if (l % 2 != 0) {
+                    return nums2[m];
+                }
+                else {
+                    return (nums2[m] + nums2[m - 1]) / 2.;
+                }
             }
-            else {
-                return nums2[0];
+        }
+        else if (l1/2 > l2) {
+            newM = m + l2;
+            if (newM < l1 && e2 < nums1[newM]) {
+                if (l % 2 != 0) {
+                    return nums1[newM];
+                }
+                else {
+                    return (nums1[newM] + nums1[newM - 1]) / 2.;
+                }
             }
         }
 
-        // Case: Median is outside of overlapping area (left or right)
-        if (offset1 != offset2 && m < max(offset1, offset2)) {
-            if (offset1 == 0) {
-                return getMedianFromPartialVector(nums1, l);
-            }
-            else {
-                return getMedianFromPartialVector(nums2, l);
-            }
-        }
-        if (end1 != end2 && m > min(end1, end2)) {
-            int offset = max(end1, end2);
-            if (end1 > end2) {
-                return getMedianFromPartialVector(nums1, l, end2);
-            }
-            else {
-                return getMedianFromPartialVector(nums2, l, end1);
+        if (l2/2 > l1) {
+            newM = m - l1;
+            if (newM < l2 && s1 > nums2[newM]) {
+                if (l % 2 != 0) {
+                    return nums2[newM];
+                }
+                else {
+                    return (nums2[newM] + nums2[newM - 1]) / 2.;
+                }
             }
         }
-        
+        else if (l1/2 > l2) {
+            newM = m - l2;
+            if (newM < l1 && s2 > nums1[newM]) {
+                if (l % 2 != 0) {
+                    return nums1[newM];
+                }
+                else {
+                    return (nums1[newM] + nums1[newM - 1]) / 2.;
+                }
+            }
+        }
 
-        int newLen = max(end1-offset1, end2-offset2);
+        int newLen = end1-offset1_initial + 1 + end2-offset2_initial + 1;
         mv.reserve(newLen);
         // Merging overlapping area into mv
-        int v1, v2;
+        int v1, v2, offset1, offset2;
+        offset1 = offset1_initial;
+        offset2 = offset2_initial;
+        v1 = nums1[offset1];
+        v2 = nums2[offset2];
         for (int i = 0; i < newLen; i++) {
-            v1 = nums1[offset1];
-            v2 = nums2[offset2];
-            if (v1 < v2) {
+            if (offset1 <= end1) v1 = nums1[offset1];
+            if (offset2 <= end2) v2 = nums2[offset2];
+
+            if (offset1 <= end1 && offset2 <= end2 && v1 == v2) {
+                v1 = nums1[offset1];
+                v2 = nums2[offset2];
+                mv.push_back(v1);
+                offset1++;
+                mv.push_back(v2);
+                offset2++;
+                i++;
+            }
+            if (offset1 <= end1 && v1 < v2) {
+                v1 = nums1[offset1];
                 mv.push_back(v1);
                 offset1++;
             }
-            else {
+            if (offset2 <= end2 && v1 > v2) {
+                v2 = nums2[offset2];
                 mv.push_back(v2);
                 offset2++;
             }
         }
-        
-        // Case: Median requires one value from merged area and one left or right of it
-        int last_of_first_vec = 0;
-        bool lof_available = false;
-        if (offset1 > offset2) {
-            last_of_first_vec = nums1[offset1-1];
-        } else if (offset1 < offset2) {
-            last_of_first_vec = nums2[offset2-1];
+        if (offset1 > end1) {
+            while (offset2 <= end2) {
+                v2 = nums2[offset2];
+                mv.push_back(v2);
+                offset2++;
+            }
+        }
+        if (offset2 > end2) {
+            while (offset1 <= end1) {
+                v1 = nums1[offset1];
+                mv.push_back(v1);
+                offset1++;
+            }
+        }
+
+        int e1New, e2New;
+        e1New = INT_MAX;
+        e2New = INT_MAX;
+        if (l1 > end1 + 1) e1New = nums1[end1 + 1];
+        if (l2 > end2 + 1) e2New = nums2[end2 + 1];
+        if (m >= mv.size()) {
+            mv.push_back(min(e1New, e2New));
         }
         
-        return getMedianFromPartialVector(mv, l, max(offset1, offset2), last_of_first_vec);
-        
-        return median;
+        return getMedianFromPartialVector(mv, l, max(offset1_initial, offset2_initial));
     }
 };
 
 int main() {
     Solution s;
-
-    int n_runs = 1;
     double m;
 
     vector<int> v1;
     vector<int> v2;
-    
-    v1 = { 1, 3 };
-    v2 = { 2 };
-    m = s.findMedianSortedArrays(v1, v2);
-    cout << m << endl;
+    vector<int> comp;
 
-    v1 = { };
-    v2 = { 2,3 };
-    m = s.findMedianSortedArrays(v1, v2);
-    cout << m << endl;
+    int correct, incorrect;
+    correct = 0;
+    incorrect = 0;
 
-    v1 = { };
-    v2 = { 1 };
-    m = s.findMedianSortedArrays(v1, v2);
-    cout << m << endl;
+    std::random_device rd;
+    mt19937 rng(rd());
+    uniform_int_distribution<int> uni_sizes(0, 1000);
+    uniform_int_distribution<int> uni_values(-1000000, 1000000);
+    int size1, size2, val;
 
-    auto t1 = chrono::high_resolution_clock::now();
-    for (int i = 0; i < n_runs; i++) {
-        v1 = { 1 };
-        v2 = { 2, 3, 4 };
-        m = s.findMedianSortedArrays(v1, v2);
-        //cout << m << endl;
+    int n_tests = 100000;
+
+    for (int i = 0; i < n_tests; i++) {
+        v1.clear();
+        v2.clear();
+        size1 = uni_sizes(rng);
+        size2 = uni_sizes(rng);
+        if (size1 + size2 == 0) {
+            if (i % 2 == 0) {
+                size1 = 1;
+            } else size2 = 1;
+        }
+        v1.reserve(size1);
+        v2.reserve(size2);
+        comp.clear();
+        comp.reserve(size1 + size2);
+
+        for (int j = 0; j < size1; j++) {
+            val = uni_values(rng);
+            v1.push_back(val);
+            comp.push_back(val);
+        }
+        for (int j = 0; j < size2; j++) {
+            val = uni_values(rng);
+            v2.push_back(val);
+            comp.push_back(val);
+        }
+
+        //cout << "Attempting: " << endl;
+        //print_vec(v1, " ");
+        //cout << endl;
+        //cout << endl;
+        //print_vec(v2, " ");
+        //cout << endl;
+        //cout << endl;
+
+        sort(v1.begin(), v1.end());
+        sort(v2.begin(), v2.end());
+
+        sort(comp.begin(), comp.end());
+        int solution = s.getMedianFromVector(comp);
+
+        int m = s.findMedianSortedArrays(v1, v2);
+
+        if (solution == m) {
+            correct++;
+            // cout << "Correct" << endl;
+        }
+        else {
+            incorrect++;
+            //cout << "Incorrect" << endl;
+            //print_vec(v1, " ");
+            //cout << endl;
+            //cout << endl;
+            //print_vec(v2, " ");
+            //cout << endl;
+            //cout << endl;
+            //s.findMedianSortedArrays(v1, v2);
+        }
+        //cout << flush;
+        //cout << "Correct %: " << 100. * correct / (i+1) << endl;
+        //cout << endl;
+
     }
-    auto t2 = high_resolution_clock::now();
-    auto ms_int = duration_cast<milliseconds>(t2 - t1);
 
-    duration<double, milli> ms_double = t2 - t1;
+    cout << "Correct: " << correct << endl;
+    cout << "Incorrect: " << incorrect << endl;
+    cout << "Correct %: " << 100. * correct / n_tests << endl;
 
-    std::cout << ms_double.count() << "ms\n";
+    //int n_runs = 10;
 
-    v1 = { 1,2,3,4,5,6};
-    v2 = { 1,2,3,7,11,12,13,16 };
-    m = s.findMedianSortedArrays(v1, v2);
-    cout << m << endl;
+    //bool all_tests = true;
 
-    v1 = { 1,2,3,7,11,12,13,16 };
-    v2 = { 1,2,3,4,5,6 };
-    m = s.findMedianSortedArrays(v1, v2);
-    cout << m << endl;
+    //if (all_tests) {
+    //    v1 = { 1, 3 };
+    //    v2 = { 2 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { };
+    //    v2 = { 2,3 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { };
+    //    v2 = { 1 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    auto t1 = chrono::high_resolution_clock::now();
+    //    for (int i = 0; i < n_runs; i++) {
+    //        v1 = { 1 };
+    //        v2 = { 2, 3, 4 };
+    //        m = s.findMedianSortedArrays(v1, v2);
+    //        //cout << m << endl;
+    //    }
+    //    auto t2 = high_resolution_clock::now();
+    //    auto ms_int = duration_cast<milliseconds>(t2 - t1);
+
+    //    duration<double, milli> ms_double = t2 - t1;
+
+    //    std::cout << ms_double.count() << "ms\n";
+
+    //    vector<int> vtest = { 1,1,2,2,3,3,4,5,6,7,11,12,13,16 };
+    //    cout << "asdf\t" << s.getMedianFromVector(vtest) << endl;
+
+    //    v1 = { 1,2,3,4,5,6 };
+    //    v2 = { 1,2,3,7,11,12,13,16 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << "Test x\t" << m << endl;
+
+    //    v1 = { 1,2,3,7,11,12,13,16 };
+    //    v2 = { 1,2,3,4,5,6 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << "Test y\t" << m << endl;
+
+    //    v1 = { 0,0,0,0,0 };
+    //    v2 = { -1,0,0,0,0,0,1 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 1,3 };
+    //    v2 = { 2,7 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 2 };
+    //    v2 = { 1,3,4,5 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 8 };
+    //    v2 = { 1,3,4,5 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 1,3,4 };
+    //    v2 = { 2 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 3 };
+    //    v2 = { 1,2,4 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 1,2,4 };
+    //    v2 = { 3 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 2 };
+    //    v2 = { 1,3,4 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 1,2,4,5 };
+    //    v2 = { 3 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 4 };
+    //    v2 = { 1,2,3,5 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+
+    //    v1 = { 1,2,3,5 };
+    //    v2 = { 4 };
+    //    m = s.findMedianSortedArrays(v1, v2);
+    //    cout << m << endl;
+    //}
 
     return 0;
 }
