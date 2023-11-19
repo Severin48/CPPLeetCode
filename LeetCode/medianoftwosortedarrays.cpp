@@ -37,13 +37,22 @@ public:
         }
     }
 
-    double getMedianFromPartialVector(vector<int>& vec, int l, int offset) {
+    double getMedianFromPartialVector(vector<int>& vec, int l, int offset, int pre_val, int post_val) {
         int m = (l / 2) - offset;
         if (l % 2 != 0) {
-            return vec[m];
+            if (m < 0) return pre_val;
+            else return vec[m];
         }
         else {
-            return ((double)vec[m] + vec[m - 1]) / 2.;
+            int first_val, last_val;
+            if (m < 1) {
+                first_val = pre_val;
+            } else first_val = vec[m - 1];
+            if (m >= vec.size()) {
+                last_val = post_val;
+            } else last_val = vec[m];
+            
+            return ((double)first_val + last_val) / 2.;
         }
     }
 
@@ -192,32 +201,37 @@ public:
 
         int newM;
 
-        if (l2/2 > l1) {
-            newM = m + l1;
-            if (m < l2 && e1 < nums2[m]) {
+        int r1 = nums1.back() - nums1.front();
+        int r2 = nums2.back() - nums2.front();
+
+        // Would be merged left of median
+        if (l2/2 > l1 && r2 > r1) {
+            newM = m - l1;
+            if (newM < l2 && nums1.back() < nums2[newM]) {
                 if (l % 2 != 0) {
-                    return nums2[m];
+                    return nums2[newM];
                 }
-                else {
-                    return (nums2[m] + nums2[m - 1]) / 2.;
+                else if (e1 < nums2[newM-1]) {
+                    return (nums2[newM] + nums2[newM - 1]) / 2.;
                 }
             }
         }
-        else if (l1/2 > l2) {
-            newM = m + l2;
-            if (newM < l1 && e2 < nums1[newM]) {
+        else if (l1/2 > l2 && r1 > r2) {
+            newM = m - l2;
+            if (newM < l1 && nums2.back() < nums1[newM]) {
                 if (l % 2 != 0) {
                     return nums1[newM];
                 }
-                else {
+                else if (e2 < nums1[newM]) {
                     return (nums1[newM] + nums1[newM - 1]) / 2.;
                 }
             }
         }
 
-        if (l2/2 > l1) {
-            newM = m - l1;
-            if (newM < l2 && s1 > nums2[newM]) {
+        // Would be merged right of median
+        if (l2/2 > l1 && r2 > r1) {
+            newM = m;
+            if (newM < l2 && nums1.front() > nums2[newM]) {
                 if (l % 2 != 0) {
                     return nums2[newM];
                 }
@@ -226,9 +240,9 @@ public:
                 }
             }
         }
-        else if (l1/2 > l2) {
-            newM = m - l2;
-            if (newM < l1 && s2 > nums1[newM]) {
+        else if (l1/2 > l2 && r1 > r2) {
+            newM = m;
+            if (newM < l1 && nums2.front() > nums1[newM]) {
                 if (l % 2 != 0) {
                     return nums1[newM];
                 }
@@ -290,11 +304,17 @@ public:
         e2New = INT_MAX;
         if (l1 > end1 + 1) e1New = nums1[end1 + 1];
         if (l2 > end2 + 1) e2New = nums2[end2 + 1];
-        if (m >= mv.size()) {
-            mv.push_back(min(e1New, e2New));
-        }
+        int post_val = min(e1New, e2New);
+
+
+        int s1New, s2New;
+        s1New = INT_MIN;
+        s2New = INT_MIN;
+        if (offset1_initial > 0) s1New = nums1[offset1_initial - 1];
+        if (offset2_initial > 0) s2New = nums2[offset2_initial - 1];
+        int pre_val = max(s1New, s2New);
         
-        return getMedianFromPartialVector(mv, l, max(offset1_initial, offset2_initial));
+        return getMedianFromPartialVector(mv, l, max(offset1_initial, offset2_initial), pre_val, post_val);
     }
 };
 
@@ -366,14 +386,14 @@ int main() {
         }
         else {
             incorrect++;
-            //cout << "Incorrect" << endl;
-            //print_vec(v1, " ");
-            //cout << endl;
-            //cout << endl;
-            //print_vec(v2, " ");
-            //cout << endl;
-            //cout << endl;
-            //s.findMedianSortedArrays(v1, v2);
+            cout << "Incorrect" << endl;
+            print_vec(v1, " ");
+            cout << endl;
+            cout << endl;
+            print_vec(v2, " ");
+            cout << endl;
+            cout << endl;
+            s.findMedianSortedArrays(v1, v2);
         }
         //cout << flush;
         //cout << "Correct %: " << 100. * correct / (i+1) << endl;
