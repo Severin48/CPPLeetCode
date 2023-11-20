@@ -1,5 +1,7 @@
 #include "LongestPalindromicSubstring.h"
+#include "PalindromeNumber.h"
 
 int main() {
-	testPalindrome1();
+	//testPalindromicSubstring();
+	testPalindromeNumber();
 }

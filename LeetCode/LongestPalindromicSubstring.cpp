@@ -62,7 +62,7 @@ public:
     }
 };
 
-void testPalindrome1() {
+void testPalindromicSubstring() {
     cout << "Finding longest palindrome..." << endl << endl;
 
     Solution s;

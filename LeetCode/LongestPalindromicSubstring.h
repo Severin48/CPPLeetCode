@@ -1,7 +1,7 @@
 #pragma once
-#ifndef PALINDROME_H
-#define PALINDROME_H
+#ifndef PALINDROMIC_SUBSTRING_H
+#define PALINDROMIC_SUBSTRING_H
 
-void testPalindrome1();
+void testPalindromicSubstring();
 
-#endif // PALINDROME_H
+#endif // PALINDROMIC_SUBSTRING_H
