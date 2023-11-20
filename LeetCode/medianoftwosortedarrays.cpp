@@ -271,83 +271,83 @@ public:
     }
 };
 
-int main() {
-    Solution s;
-    double m;
-
-    vector<int> v1;
-    vector<int> v2;
-    vector<int> comp;
-
-    int correct, incorrect;
-    correct = 0;
-    incorrect = 0;
-
-    std::random_device rd;
-    mt19937 rng(rd());
-    //uniform_int_distribution<int> uni_sizes(0, 10);
-    //uniform_int_distribution<int> uni_values(0, 10);
-    uniform_int_distribution<int> uni_sizes(0, 1000);
-    uniform_int_distribution<int> uni_values(-1000000, 1000000);
-    int size1, size2, val;
-
-    int n_tests = 100000;
-
-    cout << "Starting " << n_tests << " tests..." << endl;
-
-    for (int i = 0; i < n_tests; i++) {
-        v1.clear();
-        v2.clear();
-        size1 = uni_sizes(rng);
-        size2 = uni_sizes(rng);
-        if (size1 + size2 == 0) {
-            if (i % 2 == 0) {
-                size1 = 1;
-            } else size2 = 1;
-        }
-        v1.reserve(size1);
-        v2.reserve(size2);
-        comp.clear();
-        comp.reserve(size1 + size2);
-
-        for (int j = 0; j < size1; j++) {
-            val = uni_values(rng);
-            v1.push_back(val);
-            comp.push_back(val);
-        }
-        for (int j = 0; j < size2; j++) {
-            val = uni_values(rng);
-            v2.push_back(val);
-            comp.push_back(val);
-        }
-
-        sort(v1.begin(), v1.end());
-        sort(v2.begin(), v2.end());
-
-        sort(comp.begin(), comp.end());
-        int solution = s.getMedianFromVector(comp);
-
-        int m = s.findMedianSortedArrays(v1, v2);
-
-        if (solution == m) {
-            correct++;
-        }
-        else {
-            incorrect++;
-            //cout << "Incorrect" << endl;
-            //print_vec(v1, " ");
-            //cout << endl;
-            //cout << endl;
-            //print_vec(v2, " ");
-            //cout << endl;
-            //cout << endl;
-            //s.findMedianSortedArrays(v1, v2);
-        }
-    }
-
-    cout << "Correct: " << correct << endl;
-    cout << "Incorrect: " << incorrect << endl;
-    cout << "Correct %: " << 100. * correct / n_tests << endl;
-
-    return 0;
-}
+//int main() {
+//    Solution s;
+//    double m;
+//
+//    vector<int> v1;
+//    vector<int> v2;
+//    vector<int> comp;
+//
+//    int correct, incorrect;
+//    correct = 0;
+//    incorrect = 0;
+//
+//    std::random_device rd;
+//    mt19937 rng(rd());
+//    //uniform_int_distribution<int> uni_sizes(0, 10);
+//    //uniform_int_distribution<int> uni_values(0, 10);
+//    uniform_int_distribution<int> uni_sizes(0, 1000);
+//    uniform_int_distribution<int> uni_values(-1000000, 1000000);
+//    int size1, size2, val;
+//
+//    int n_tests = 100000;
+//
+//    cout << "Starting " << n_tests << " tests..." << endl;
+//
+//    for (int i = 0; i < n_tests; i++) {
+//        v1.clear();
+//        v2.clear();
+//        size1 = uni_sizes(rng);
+//        size2 = uni_sizes(rng);
+//        if (size1 + size2 == 0) {
+//            if (i % 2 == 0) {
+//                size1 = 1;
+//            } else size2 = 1;
+//        }
+//        v1.reserve(size1);
+//        v2.reserve(size2);
+//        comp.clear();
+//        comp.reserve(size1 + size2);
+//
+//        for (int j = 0; j < size1; j++) {
+//            val = uni_values(rng);
+//            v1.push_back(val);
+//            comp.push_back(val);
+//        }
+//        for (int j = 0; j < size2; j++) {
+//            val = uni_values(rng);
+//            v2.push_back(val);
+//            comp.push_back(val);
+//        }
+//
+//        sort(v1.begin(), v1.end());
+//        sort(v2.begin(), v2.end());
+//
+//        sort(comp.begin(), comp.end());
+//        int solution = s.getMedianFromVector(comp);
+//
+//        int m = s.findMedianSortedArrays(v1, v2);
+//
+//        if (solution == m) {
+//            correct++;
+//        }
+//        else {
+//            incorrect++;
+//            //cout << "Incorrect" << endl;
+//            //print_vec(v1, " ");
+//            //cout << endl;
+//            //cout << endl;
+//            //print_vec(v2, " ");
+//            //cout << endl;
+//            //cout << endl;
+//            //s.findMedianSortedArrays(v1, v2);
+//        }
+//    }
+//
+//    cout << "Correct: " << correct << endl;
+//    cout << "Incorrect: " << incorrect << endl;
+//    cout << "Correct %: " << 100. * correct / n_tests << endl;
+//
+//    return 0;
+//}
