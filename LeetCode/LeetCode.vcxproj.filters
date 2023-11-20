@@ -33,12 +33,18 @@
     <ClCompile Include="PalindromeNumber.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="LengthOfLongestSubstring.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LongestPalindromicSubstring.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="PalindromeNumber.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="LengthOfLongestSubstring.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

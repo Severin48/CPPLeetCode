@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="LengthOfLongestSubstring.cpp" />
     <ClCompile Include="LongestPalindromicSubstring.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medianoftwosortedarrays.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="twosum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LengthOfLongestSubstring.h" />
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="PalindromeNumber.h" />
   </ItemGroup>
