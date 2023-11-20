@@ -1,0 +1,7 @@
+#pragma once
+#ifndef REMOVE_DUPLICATES_FROM_SORTED_ARRAY
+#define	REMOVE_DUPLICATES_FROM_SORTED_ARRAY
+
+void testRemoveDuplicatesFromSortedArray();
+
+#endif // REMOVE_DUPLICATES_FROM_SORTED_ARRAY

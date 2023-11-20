@@ -135,6 +135,7 @@
     <ClCompile Include="medianoftwosortedarrays.cpp" />
     <ClCompile Include="MinimumTimeGarbageCollection.cpp" />
     <ClCompile Include="PalindromeNumber.cpp" />
+    <ClCompile Include="RemoveDuplicatesFromSortedArray.cpp" />
     <ClCompile Include="twosum.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="MinimumTimeGarbageCollection.h" />
     <ClInclude Include="PalindromeNumber.h" />
+    <ClInclude Include="RemoveDuplicatesFromSortedArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
