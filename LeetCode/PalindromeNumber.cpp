@@ -11,17 +11,15 @@ public:
         if (x < 0) return false;
         if (x < 10) return true;
         if (x % 10 == 0) return false;
-        bool isPal = true;
+
         string s = to_string(x);
         int size = s.size();
-        for (int i = 0; i < size; i++) {
-            if (s[i] != s[size - i - 1]) {
-                isPal = false;
-                break;
-            }
+        int i = 0;
+        while (i < size && s[i] == s[size - i - 1]) {
+            i++;
         }
-
-        return isPal;
+        if (i < size) return false;
+        else return true;
     }
 };
 
