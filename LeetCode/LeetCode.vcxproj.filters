@@ -36,6 +36,18 @@
     <ClCompile Include="LengthOfLongestSubstring.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="MinimumTimeGarbageCollection.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveDuplicatesFromSortedArray.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MissingNumberUnordered.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HappyNumber.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LongestPalindromicSubstring.h">
@@ -45,6 +57,15 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="LengthOfLongestSubstring.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MinimumTimeGarbageCollection.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveDuplicatesFromSortedArray.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HappyNumber.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

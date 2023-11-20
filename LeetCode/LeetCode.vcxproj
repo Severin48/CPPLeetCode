@@ -129,16 +129,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="HappyNumber.cpp" />
     <ClCompile Include="LengthOfLongestSubstring.cpp" />
     <ClCompile Include="LongestPalindromicSubstring.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medianoftwosortedarrays.cpp" />
     <ClCompile Include="MinimumTimeGarbageCollection.cpp" />
+    <ClCompile Include="MissingNumberUnordered.cpp" />
     <ClCompile Include="PalindromeNumber.cpp" />
     <ClCompile Include="RemoveDuplicatesFromSortedArray.cpp" />
     <ClCompile Include="twosum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HappyNumber.h" />
     <ClInclude Include="LengthOfLongestSubstring.h" />
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="MinimumTimeGarbageCollection.h" />
