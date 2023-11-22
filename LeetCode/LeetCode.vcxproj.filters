@@ -51,6 +51,9 @@
     <ClCompile Include="SearchInsertPosition.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="DiagonalTraverse2.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LongestPalindromicSubstring.h">
@@ -72,6 +75,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="SearchInsertPosition.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagonalTraverse2.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
