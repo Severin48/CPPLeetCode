@@ -90,9 +90,6 @@ void testDiagonalTraverse2() {
     //vector<vector<vector<int>>> nums = { {{1,2,3},{4},{5,6,7},{8},{9,10,11}} };
     //vector<vector<int>> solutions = { {1,4,2,5,3,8,6,9,7,10,11} };
 
-    //vector<string> strings = { "caba" };
-    //vector<string> palindromes = { "aba" };
-
     int correct, incorrect;
     correct = incorrect = 0;
     for (int i = 0; i < nums.size(); i++) {
@@ -109,11 +106,9 @@ void testDiagonalTraverse2() {
 
         if (cor) {
             correct++;
-            // cout << "Correct: " << result << endl;
         }
         else {
             incorrect++;
-            // cout << "Incorrect: " << result << endl;
         }
     }
     cout << "Correct:" << correct << endl;
