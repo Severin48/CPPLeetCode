@@ -5,6 +5,7 @@
 #include "HappyNumber.h"
 #include "SearchInsertPosition.h"
 #include "DiagonalTraverse2.h"
+#include "StringToInteger.h"
 
 int main() {
 	// testPalindromicSubstring();
@@ -13,7 +14,8 @@ int main() {
 	// testRemoveDuplicatesFromSortedArray();
 	// testIsHappy();
 	// testSearchInsertPosition();
-	testDiagonalTraverse2();
+	// testDiagonalTraverse2();
+	testStringToInteger();
 }
 
 /** LeetCode speed boost

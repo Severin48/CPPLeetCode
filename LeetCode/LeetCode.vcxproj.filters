@@ -54,6 +54,9 @@
     <ClCompile Include="DiagonalTraverse2.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="StringToInteger.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LongestPalindromicSubstring.h">
@@ -78,6 +81,12 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="DiagonalTraverse2.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StringToInteger.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Testing.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
