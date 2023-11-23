@@ -139,6 +139,7 @@
     <ClCompile Include="MinimumTimeGarbageCollection.cpp" />
     <ClCompile Include="MissingNumberUnordered.cpp" />
     <ClCompile Include="PalindromeNumber.cpp" />
+    <ClCompile Include="RegexMatching.cpp" />
     <ClCompile Include="RemoveDuplicatesFromSortedArray.cpp" />
     <ClCompile Include="SearchInsertPosition.cpp" />
     <ClCompile Include="StringToInteger.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="MinimumTimeGarbageCollection.h" />
     <ClInclude Include="PalindromeNumber.h" />
+    <ClInclude Include="RegexMatching.h" />
     <ClInclude Include="RemoveDuplicatesFromSortedArray.h" />
     <ClInclude Include="SearchInsertPosition.h" />
     <ClInclude Include="StringToInteger.h" />
