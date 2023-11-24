@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <functional>
 
 using namespace std;
 
@@ -14,45 +15,54 @@ public:
         char sc = '0';
         char pwc = -1;
         int i = ps - 1;
-        for (; i >= 0; --i) {
+        int pwcCount = 0;
+        while (i >= 0 && j >= 0) {
+            pwcCount = 0;
             if (j < 0) break;
-            if (p[i] == s[j] || p[i] == '.') --j;
+            if (p[i] == s[j] || p[i] == '.') {
+                --j;
+                --i;
+            }
             else if (p[i] == '*') {
                 char wc = p[i - 1];
                 --i;
+                function<bool()> cond;
+                bool brk = false;
+                wc = s[j];
                 if (wc == '.') {
-                    wc = s[j];
                     if (i > 0) sc = p[i - 1];
                     else return true;
-                    while (j >= 0 && s[j] != sc) {
-                        --j;
-                        pwc = '.';
-                    }
-                } else if (s[j] == wc) {
-                    bool brk = false;
-                    if (i > 0) sc = p[i-1];
-                    else brk = true;
-                    int cnt = 1;
-                    while (i >= 0 && (sc == '*' || sc == wc)) {
-                        sc = p[i - cnt];
-                        cnt--;
-                    }
-                    while (j >= 0 && wc == s[j] && s[j] != sc) {
-                        --j;
-                        pwc = wc;
-                    }
-                    if (brk) break;
+                    function<bool()> cond = [&]() {return j >= 0 && s[j] != sc; };
                 }
+                else if (s[j] == wc) {
+                    function<bool()> cond = [&]() {return j >= 0 && wc == s[j] && s[j] != sc; };
+                    if (i > 0) sc = p[i - 1];
+                    else brk = true;
+                }
+                int cnt = 1;
+                while (i >= 0 && (sc == '*' || sc == wc)) {
+                    sc = p[i - cnt];
+                    cnt--;
+                    //--i;
+                }
+                while (cond) {
+                    --j;
+                    pwc = wc;
+                    pwcCount++;
+                }
+                --i;
+                if (brk) break;
             }
             else if (s[j] == pwc) {
                 pwc = -1;
                 --j;
+                --i;
             }
             else return false;
         }
         while (i >= 0) {
             if (p[i] == '*') i -= 2;
-            else if (p[i] == pwc) --i;
+            else if (p[i] == pwc && pwcCount > 0) --i;
             else if (p[i] == '.' && j > -1) --i;
             else return false;
         }
@@ -61,6 +71,68 @@ public:
         return ret;
     }
 };
+
+//class Solution {
+//public:
+//    bool isMatch(string s, string p) {
+//        bool ret = true;
+//        int ss = s.size();
+//        int ps = p.size();
+//        int j = ss - 1;
+//        char sc = '0';
+//        char pwc = -1;
+//        int i = ps - 1;
+//        int pwcCount = 0;
+//        for (; i >= 0; --i) {
+//            pwcCount = 0;
+//            if (j < 0) break;
+//            if (p[i] == s[j] || p[i] == '.') --j;
+//            else if (p[i] == '*') {
+//                char wc = p[i - 1];
+//                --i;
+//                if (wc == '.') {
+//                    wc = s[j];
+//                    if (i > 0) sc = p[i - 1];
+//                    else return true;
+//                    while (j >= 0 && s[j] != sc) {
+//                        --j;
+//                        pwc = '.';
+//                        pwcCount++;
+//                    }
+//                } else if (s[j] == wc) {
+//                    bool brk = false;
+//                    if (i > 0) sc = p[i-1];
+//                    else brk = true;
+//                    int cnt = 1;
+//                    while (i >= 0 && (sc == '*' || sc == wc)) {
+//                        sc = p[i - cnt];
+//                        cnt--;
+//                    }
+//                    while (j >= 0 && wc == s[j] && s[j] != sc) {
+//                        --j;
+//                        pwc = wc;
+//                        pwcCount++;
+//                    }
+//                    if (brk) break;
+//                }
+//            }
+//            else if (s[j] == pwc) {
+//                pwc = -1;
+//                --j;
+//            }
+//            else return false;
+//        }
+//        while (i >= 0) {
+//            if (p[i] == '*') i -= 2;
+//            else if (p[i] == pwc && pwcCount > 0) --i;
+//            else if (p[i] == '.' && j > -1) --i;
+//            else return false;
+//        }
+//        if (j == 0 && p[0] == '.') return true;
+//        if (j > -1 || i >= 0) return false;
+//        return ret;
+//    }
+//};
 
 //class Solution {
 //public:
@@ -105,9 +177,9 @@ void testRegexMatching() {
     pvec = { "a", "a*", ".*", "ab*a*c*a", "d*", "aaaa", "ab*a*c*a", ".*..a*", "a.*", ".*a*aa*.*b*.c*.*a*" };
     solvec = { false, true, true, true, false, false, true, false, false, true };
 
-    svec = { "aabcbcbcaccbcaabc" };
-    pvec = { ".*a*aa*.*b*.c*.*a*" };
-    solvec = { true };
+    //svec = { "aabcbcbcaccbcaabc" };
+    //pvec = { ".*a*aa*.*b*.c*.*a*" };
+    //solvec = { true };
 
     //svec = {"aaa" };
     //pvec = { "ab*a*c*a" };
