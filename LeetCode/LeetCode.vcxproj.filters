@@ -1,107 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Quelldateien">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Headerdateien">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Ressourcendateien">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="ArithmeticSubarrays.cpp" />
+    <ClCompile Include="DiagonalTraverse2.cpp" />
+    <ClCompile Include="HappyNumber.cpp" />
+    <ClCompile Include="LengthOfLongestSubstring.cpp" />
+    <ClCompile Include="LongestPalindromicSubstring.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="medianoftwosortedarrays.cpp" />
+    <ClCompile Include="MinimumTimeGarbageCollection.cpp" />
+    <ClCompile Include="MissingNumberUnordered.cpp" />
+    <ClCompile Include="PalindromeNumber.cpp" />
+    <ClCompile Include="RegexMatching.cpp" />
+    <ClCompile Include="RemoveDuplicatesFromSortedArray.cpp" />
+    <ClCompile Include="SearchInsertPosition.cpp" />
+    <ClCompile Include="StringToInteger.cpp" />
+    <ClCompile Include="twosum.cpp" />
+    <ClCompile Include="MaximumNrCoins.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="twosum.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="addtwonumbers.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="medianoftwosortedarrays.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="LongestPalindromicSubstring.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="PalindromeNumber.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="LengthOfLongestSubstring.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="MinimumTimeGarbageCollection.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="RemoveDuplicatesFromSortedArray.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="MissingNumberUnordered.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="HappyNumber.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="SearchInsertPosition.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="DiagonalTraverse2.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="StringToInteger.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="ArithmeticSubarrays.cpp">
-=======
-    <ClCompile Include="RegexMatching.cpp">
->>>>>>> 3a692d1f5aaac2f32cd1ebca02299b36f3ca3a90
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="LongestPalindromicSubstring.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="PalindromeNumber.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="LengthOfLongestSubstring.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="MinimumTimeGarbageCollection.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="RemoveDuplicatesFromSortedArray.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="HappyNumber.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="SearchInsertPosition.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="DiagonalTraverse2.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="StringToInteger.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="Testing.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="ArithmeticSubarrays.h">
-=======
-    <ClInclude Include="RegexMatching.h">
->>>>>>> 3a692d1f5aaac2f32cd1ebca02299b36f3ca3a90
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
+    <ClInclude Include="ArithmeticSubarrays.h" />
+    <ClInclude Include="DiagonalTraverse2.h" />
+    <ClInclude Include="HappyNumber.h" />
+    <ClInclude Include="LengthOfLongestSubstring.h" />
+    <ClInclude Include="LongestPalindromicSubstring.h" />
+    <ClInclude Include="MinimumTimeGarbageCollection.h" />
+    <ClInclude Include="PalindromeNumber.h" />
+    <ClInclude Include="RegexMatching.h" />
+    <ClInclude Include="RemoveDuplicatesFromSortedArray.h" />
+    <ClInclude Include="SearchInsertPosition.h" />
+    <ClInclude Include="StringToInteger.h" />
+    <ClInclude Include="Testing.h" />
+    <ClInclude Include="MaximumNrCoins.h" />
   </ItemGroup>
 </Project>

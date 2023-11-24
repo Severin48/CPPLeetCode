@@ -7,7 +7,7 @@
 #include <functional>
 
 template <typename T, typename U>
-float testResults(const std::vector<T>& inputs, const std::vector<U>& outputs, int verbose, std::function<U(T)> func) {
+float testResults(const std::vector<T>& inputs, const std::vector<U>& outputs, std::function<U(T)> func, int verbose=1) {
     int correct = 0;
     int incorrect = 0;
     for (size_t i = 0; i < inputs.size(); i++) {

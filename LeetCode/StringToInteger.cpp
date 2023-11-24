@@ -50,5 +50,5 @@ void testStringToInteger() {
 
     std::function<int(std::string)> func = myAtoi;
 
-    testResults(strings, results, 2, func);
+    testResults(strings, results, func, 2);
 }

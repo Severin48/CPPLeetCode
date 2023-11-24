@@ -136,6 +136,7 @@
     <ClCompile Include="LengthOfLongestSubstring.cpp" />
     <ClCompile Include="LongestPalindromicSubstring.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MaximumNrCoins.cpp" />
     <ClCompile Include="medianoftwosortedarrays.cpp" />
     <ClCompile Include="MinimumTimeGarbageCollection.cpp" />
     <ClCompile Include="MissingNumberUnordered.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="HappyNumber.h" />
     <ClInclude Include="LengthOfLongestSubstring.h" />
     <ClInclude Include="LongestPalindromicSubstring.h" />
+    <ClInclude Include="MaximumNrCoins.h" />
     <ClInclude Include="MinimumTimeGarbageCollection.h" />
     <ClInclude Include="PalindromeNumber.h" />
     <ClInclude Include="RegexMatching.h" />
