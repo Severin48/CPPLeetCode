@@ -57,6 +57,9 @@
     <ClCompile Include="StringToInteger.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="ArithmeticSubarrays.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LongestPalindromicSubstring.h">
@@ -87,6 +90,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Testing.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ArithmeticSubarrays.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

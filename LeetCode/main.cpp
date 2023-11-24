@@ -6,6 +6,7 @@
 #include "SearchInsertPosition.h"
 #include "DiagonalTraverse2.h"
 #include "StringToInteger.h"
+#include "ArithmeticSubarrays.h"
 
 int main() {
 	// testPalindromicSubstring();
@@ -15,7 +16,8 @@ int main() {
 	// testIsHappy();
 	// testSearchInsertPosition();
 	// testDiagonalTraverse2();
-	testStringToInteger();
+	// testStringToInteger();
+	testArithmeticSubarrays();
 }
 
 /** LeetCode speed boost

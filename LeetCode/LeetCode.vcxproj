@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="addtwonumbers.cpp" />
+    <ClCompile Include="ArithmeticSubarrays.cpp" />
     <ClCompile Include="DiagonalTraverse2.cpp" />
     <ClCompile Include="HappyNumber.cpp" />
     <ClCompile Include="LengthOfLongestSubstring.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="twosum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArithmeticSubarrays.h" />
     <ClInclude Include="DiagonalTraverse2.h" />
     <ClInclude Include="HappyNumber.h" />
     <ClInclude Include="LengthOfLongestSubstring.h" />
