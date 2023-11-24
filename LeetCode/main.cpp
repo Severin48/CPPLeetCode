@@ -1,12 +1,13 @@
-#include "LongestPalindromicSubstring.h"
-#include "PalindromeNumber.h"
-#include "MinimumTimeGarbageCollection.h"
-#include "RemoveDuplicatesFromSortedArray.h"
-#include "HappyNumber.h"
-#include "SearchInsertPosition.h"
-#include "DiagonalTraverse2.h"
-#include "StringToInteger.h"
-#include "ArithmeticSubarrays.h"
+//#include "LongestPalindromicSubstring.h"
+//#include "PalindromeNumber.h"
+//#include "MinimumTimeGarbageCollection.h"
+//#include "RemoveDuplicatesFromSortedArray.h"
+//#include "HappyNumber.h"
+//#include "SearchInsertPosition.h"
+//#include "DiagonalTraverse2.h"
+//#include "StringToInteger.h"
+//#include "ArithmeticSubarrays.h"
+#include "RegexMatching.h"
 
 int main() {
 	// testPalindromicSubstring();
@@ -17,7 +18,8 @@ int main() {
 	// testSearchInsertPosition();
 	// testDiagonalTraverse2();
 	// testStringToInteger();
-	testArithmeticSubarrays();
+	// testArithmeticSubarrays();
+	testRegexMatching();
 }
 
 /** LeetCode speed boost

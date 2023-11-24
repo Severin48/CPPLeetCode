@@ -57,7 +57,11 @@
     <ClCompile Include="StringToInteger.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="ArithmeticSubarrays.cpp">
+=======
+    <ClCompile Include="RegexMatching.cpp">
+>>>>>>> 3a692d1f5aaac2f32cd1ebca02299b36f3ca3a90
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +96,11 @@
     <ClInclude Include="Testing.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="ArithmeticSubarrays.h">
+=======
+    <ClInclude Include="RegexMatching.h">
+>>>>>>> 3a692d1f5aaac2f32cd1ebca02299b36f3ca3a90
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
