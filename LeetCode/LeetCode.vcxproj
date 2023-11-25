@@ -147,6 +147,7 @@
     <ClCompile Include="SearchInsertPosition.cpp" />
     <ClCompile Include="StringToInteger.cpp" />
     <ClCompile Include="twosum.cpp" />
+    <ClCompile Include="ZigZagConversion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSubarrays.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="SearchInsertPosition.h" />
     <ClInclude Include="StringToInteger.h" />
     <ClInclude Include="Testing.h" />
+    <ClInclude Include="ZigZagConversion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

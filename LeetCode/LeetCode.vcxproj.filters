@@ -19,6 +19,7 @@
     <ClCompile Include="twosum.cpp" />
     <ClCompile Include="MaximumNrCoins.cpp" />
     <ClCompile Include="IntegerToRoman.cpp" />
+    <ClCompile Include="ZigZagConversion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSubarrays.h" />
@@ -35,5 +36,6 @@
     <ClInclude Include="Testing.h" />
     <ClInclude Include="MaximumNrCoins.h" />
     <ClInclude Include="IntegerToRoman.h" />
+    <ClInclude Include="ZigZagConversion.h" />
   </ItemGroup>
 </Project>
