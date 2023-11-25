@@ -8,7 +8,8 @@
 //#include "StringToInteger.h"
 //#include "ArithmeticSubarrays.h"
 //#include "RegexMatching.h"
-#include "MaximumNrCoins.h"
+//#include "MaximumNrCoins.h"
+#include "IntegerToRoman.h"
 
 int main() {
 	// testPalindromicSubstring();
@@ -21,7 +22,8 @@ int main() {
 	// testStringToInteger();
 	// testArithmeticSubarrays();
 	// testRegexMatching();
-	testMaxCoins();
+	// testMaxCoins();
+	testIntegerToRoman();
 }
 
 /** LeetCode speed boost

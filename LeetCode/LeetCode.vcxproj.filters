@@ -18,6 +18,7 @@
     <ClCompile Include="StringToInteger.cpp" />
     <ClCompile Include="twosum.cpp" />
     <ClCompile Include="MaximumNrCoins.cpp" />
+    <ClCompile Include="IntegerToRoman.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSubarrays.h" />
@@ -33,5 +34,6 @@
     <ClInclude Include="StringToInteger.h" />
     <ClInclude Include="Testing.h" />
     <ClInclude Include="MaximumNrCoins.h" />
+    <ClInclude Include="IntegerToRoman.h" />
   </ItemGroup>
 </Project>

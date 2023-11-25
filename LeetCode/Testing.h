@@ -17,7 +17,7 @@ float testResults(const std::vector<T>& inputs, const std::vector<U>& outputs, s
         else {
             incorrect++;
             if (verbose > 1) {
-                std::cout << "Problem " << i << ":\tExpected: " << outputs[i] << "\t -- got -- \t" << result << std::endl;
+                std::cout << "Problem " << i << ": Expected " << outputs[i] << " -- got -- " << result << std::endl;
             }
         }
     }
