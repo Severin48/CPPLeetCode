@@ -45,22 +45,22 @@ static const int _ = []() { std::ios::sync_with_stdio(false); std::cin.tie(nullp
 /*
 
     Solution s;
-    vector<TYPE> values = { };
-    vector<TYPE> solutions = { };
+    vector<vector<vector<int>>> values = { {{0,0,1},{1,1,1},{1,0,1}}, {{1,0,1,0,1}}, {{1,1,0},{1,0,1}} };
+    vector<int> solutions = { 4, 3, 2 };
     int correct, incorrect;
     correct = incorrect = 0;
     for (int i = 0; i < values.size(); i++) {
-        bool result = s.isPalindrome(values[i]);
+        int result = s.largestSubmatrix(values[i]);
         if (result == solutions[i]) {
             correct++;
             // cout << "Correct: " << result << endl;
         }
         else {
             incorrect++;
-            // cout << "Incorrect: " << result << endl;
+            cout << "Problem " << i << " Expected\t" << solutions[i] << "  = got =  " << result << endl;
         }
     }
-    cout << "Correct:" << correct << endl;
+    cout << endl << "Correct:" << correct << endl;
     cout << "Incorrect:" << incorrect << endl;
     cout << "Correct: " << 100. * correct / values.size() << "%" << endl;
 
