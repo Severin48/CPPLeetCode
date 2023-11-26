@@ -134,6 +134,7 @@
     <ClCompile Include="DiagonalTraverse2.cpp" />
     <ClCompile Include="HappyNumber.cpp" />
     <ClCompile Include="IntegerToRoman.cpp" />
+    <ClCompile Include="LargestSubmatrixWithRearrangements.cpp" />
     <ClCompile Include="LengthOfLongestSubstring.cpp" />
     <ClCompile Include="LongestPalindromicSubstring.cpp" />
     <ClCompile Include="main.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="DiagonalTraverse2.h" />
     <ClInclude Include="HappyNumber.h" />
     <ClInclude Include="IntegerToRoman.h" />
+    <ClInclude Include="LargestSubmatrixWithRearrangements.h" />
     <ClInclude Include="LengthOfLongestSubstring.h" />
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="MaximumNrCoins.h" />

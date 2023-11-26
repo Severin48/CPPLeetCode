@@ -10,10 +10,12 @@
 //#include "RegexMatching.h"
 //#include "MaximumNrCoins.h"
 //#include "IntegerToRoman.h"
-#include "ZigZagConversion.h"
+//#include "ZigZagConversion.h"
+#include "LargestSubmatrixWithRearrangements.h"
 
 int main() {
-	testZigZagConversion();
+    testLargestSubmatrixWithRearrangements();
+	// testZigZagConversion();
 	// testPalindromicSubstring();
 	// testPalindromeNumber();
 	// testMinimumTimeGarbageCollection();
@@ -43,32 +45,24 @@ static const int _ = []() { std::ios::sync_with_stdio(false); std::cin.tie(nullp
 /*
 
     Solution s;
+    vector<TYPE> values = { };
+    vector<TYPE> solutions = { };
     int correct, incorrect;
     correct = incorrect = 0;
-    for (int i = 0; i < nums.size(); i++) {
-        vector<int> result = s.findDiagonalOrder(nums[i]); // TODO: Nicht das - Das ist die Version mit nested result vector
-        bool cor = true;
-        if (result.size() != solutions[i].size()) {
-            cor = false;
-            incorrect++;
-            break;
-        }
-        for (int j = 0; j < result.size(); ++j) {
-            if (result[j] != solutions[i][j]) cor = false;
-            std::cout << "Problem " << i << ": Expected " << solutions[i] << " -- got -- " << result[j] << std::endl;
-        }
-
-        if (cor) {
+    for (int i = 0; i < values.size(); i++) {
+        bool result = s.isPalindrome(values[i]);
+        if (result == solutions[i]) {
             correct++;
+            // cout << "Correct: " << result << endl;
         }
         else {
             incorrect++;
-            
+            // cout << "Incorrect: " << result << endl;
         }
     }
     cout << "Correct:" << correct << endl;
     cout << "Incorrect:" << incorrect << endl;
-    cout << "Correct: " << 100. * correct / solutions.size() << "%" << endl;
+    cout << "Correct: " << 100. * correct / values.size() << "%" << endl;
 
 
 */

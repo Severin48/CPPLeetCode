@@ -1,0 +1,7 @@
+#pragma once
+#ifndef LARGEST_SUBMATRIX_WITH_REARRANGEMENTS
+#define LARGEST_SUBMATRIX_WITH_REARRANGEMENTS
+
+void testLargestSubmatrixWithRearrangements();
+
+#endif // LARGEST_SUBMATRIX_WITH_REARRANGEMENTS
