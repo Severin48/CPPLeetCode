@@ -11,10 +11,12 @@
 //#include "MaximumNrCoins.h"
 //#include "IntegerToRoman.h"
 //#include "ZigZagConversion.h"
-#include "LargestSubmatrixWithRearrangements.h"
+//#include "LargestSubmatrixWithRearrangements.h"
+#include "NrWaysToDivideCorridor.h"
 
 int main() {
-    testLargestSubmatrixWithRearrangements();
+    testNrWaysToDivideCorridor();
+    //testLargestSubmatrixWithRearrangements();
 	// testZigZagConversion();
 	// testPalindromicSubstring();
 	// testPalindromeNumber();

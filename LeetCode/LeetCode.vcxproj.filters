@@ -20,6 +20,8 @@
     <ClCompile Include="MaximumNrCoins.cpp" />
     <ClCompile Include="IntegerToRoman.cpp" />
     <ClCompile Include="ZigZagConversion.cpp" />
+    <ClCompile Include="LargestSubmatrixWithRearrangements.cpp" />
+    <ClCompile Include="NrWaysToDivideCorridor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSubarrays.h" />
@@ -37,5 +39,7 @@
     <ClInclude Include="MaximumNrCoins.h" />
     <ClInclude Include="IntegerToRoman.h" />
     <ClInclude Include="ZigZagConversion.h" />
+    <ClInclude Include="LargestSubmatrixWithRearrangements.h" />
+    <ClInclude Include="NrWaysToDivideCorridor.h" />
   </ItemGroup>
 </Project>

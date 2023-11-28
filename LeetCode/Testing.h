@@ -34,3 +34,11 @@ float testResults(const std::vector<T>& inputs, const std::vector<U>& outputs, s
 }
 
 #endif // TESTING
+
+/*
+Example usage:
+
+    std::function<string(int)> func = intToRoman;
+    testResults(inputs, solutions, func, 2);
+
+*/
