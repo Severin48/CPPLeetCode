@@ -12,10 +12,12 @@
 //#include "IntegerToRoman.h"
 //#include "ZigZagConversion.h"
 //#include "LargestSubmatrixWithRearrangements.h"
-#include "NrWaysToDivideCorridor.h"
+//#include "NrWaysToDivideCorridor.h"
+#include "LetterCombinationsOfAPhoneNumber.h"
 
 int main() {
-    testNrWaysToDivideCorridor();
+    testLetterCombinationsOfAPhoneNumber();
+    //testNrWaysToDivideCorridor();
     //testLargestSubmatrixWithRearrangements();
 	// testZigZagConversion();
 	// testPalindromicSubstring();

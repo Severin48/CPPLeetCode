@@ -136,6 +136,7 @@
     <ClCompile Include="IntegerToRoman.cpp" />
     <ClCompile Include="LargestSubmatrixWithRearrangements.cpp" />
     <ClCompile Include="LengthOfLongestSubstring.cpp" />
+    <ClCompile Include="LetterCombinationsOfAPhoneNumber.cpp" />
     <ClCompile Include="LongestPalindromicSubstring.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MaximumNrCoins.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="IntegerToRoman.h" />
     <ClInclude Include="LargestSubmatrixWithRearrangements.h" />
     <ClInclude Include="LengthOfLongestSubstring.h" />
+    <ClInclude Include="LetterCombinationsOfAPhoneNumber.h" />
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="MaximumNrCoins.h" />
     <ClInclude Include="MinimumTimeGarbageCollection.h" />

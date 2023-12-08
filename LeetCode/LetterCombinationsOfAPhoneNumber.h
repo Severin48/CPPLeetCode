@@ -1,0 +1,7 @@
+#pragma once
+#ifndef LETTER_COMBINATIONS_OF_A_PHONE_NUMBER
+#define LETTER_COMBINATIONS_OF_A_PHONE_NUMBER
+
+void testLetterCombinationsOfAPhoneNumber();
+
+#endif // LETTER_COMBINATIONS_OF_A_PHONE_NUMBER
