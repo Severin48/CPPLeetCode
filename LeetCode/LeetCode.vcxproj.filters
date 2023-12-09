@@ -22,6 +22,7 @@
     <ClCompile Include="ZigZagConversion.cpp" />
     <ClCompile Include="LargestSubmatrixWithRearrangements.cpp" />
     <ClCompile Include="NrWaysToDivideCorridor.cpp" />
+    <ClCompile Include="MinTimeVisitingAllPoints.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSubarrays.h" />
@@ -41,5 +42,6 @@
     <ClInclude Include="ZigZagConversion.h" />
     <ClInclude Include="LargestSubmatrixWithRearrangements.h" />
     <ClInclude Include="NrWaysToDivideCorridor.h" />
+    <ClInclude Include="MinTimeVisitingAllPoints.h" />
   </ItemGroup>
 </Project>

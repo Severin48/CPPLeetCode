@@ -141,6 +141,7 @@
     <ClCompile Include="MaximumNrCoins.cpp" />
     <ClCompile Include="medianoftwosortedarrays.cpp" />
     <ClCompile Include="MinimumTimeGarbageCollection.cpp" />
+    <ClCompile Include="MinTimeVisitingAllPoints.cpp" />
     <ClCompile Include="MissingNumberUnordered.cpp" />
     <ClCompile Include="NrWaysToDivideCorridor.cpp" />
     <ClCompile Include="PalindromeNumber.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="LongestPalindromicSubstring.h" />
     <ClInclude Include="MaximumNrCoins.h" />
     <ClInclude Include="MinimumTimeGarbageCollection.h" />
+    <ClInclude Include="MinTimeVisitingAllPoints.h" />
     <ClInclude Include="NrWaysToDivideCorridor.h" />
     <ClInclude Include="PalindromeNumber.h" />
     <ClInclude Include="RegexMatching.h" />
