@@ -13,10 +13,10 @@
 //#include "ZigZagConversion.h"
 //#include "LargestSubmatrixWithRearrangements.h"
 //#include "NrWaysToDivideCorridor.h"
-#include "MinTimeVisitingAllPoints.h"
+#include "LetterCombinationsOfAPhoneNumber.h"
 
 int main() {
-    testMinTimeVisitingAllPoints();
+    testLetterCombinationsOfAPhoneNumber();
     //testNrWaysToDivideCorridor();
     //testLargestSubmatrixWithRearrangements();
 	// testZigZagConversion();

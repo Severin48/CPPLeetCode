@@ -23,6 +23,7 @@
     <ClCompile Include="LargestSubmatrixWithRearrangements.cpp" />
     <ClCompile Include="NrWaysToDivideCorridor.cpp" />
     <ClCompile Include="MinTimeVisitingAllPoints.cpp" />
+    <ClCompile Include="LetterCombinationsOfAPhoneNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSubarrays.h" />
@@ -43,5 +44,6 @@
     <ClInclude Include="LargestSubmatrixWithRearrangements.h" />
     <ClInclude Include="NrWaysToDivideCorridor.h" />
     <ClInclude Include="MinTimeVisitingAllPoints.h" />
+    <ClInclude Include="LetterCombinationsOfAPhoneNumber.h" />
   </ItemGroup>
 </Project>
